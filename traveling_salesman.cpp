@@ -36,13 +36,13 @@ int main() {
   pass[0] = true;
 
   for(int i = 1; i < n; i++){
-    int best = -1;
+    int opt = -1;
     for(int j = 0; j < n; j++)
-      if(!pass[j] && (best == -1 || dist(travel[i-1], j, num) < dist(travel[i-1], best, num))){
-        best = j;
+      if(!pass[j] && (opt == -1 || dist(travel[i-1], j, num) < dist(travel[i-1], opt, num))){
+        opt = j;
       }
-    travel[i] = best;
-    pass[best] = true;
+    travel[i] = opt;
+    pass[opt] = true;
   }
 
   for(int i = 0; i < travel.size(); i ++)
