@@ -37,14 +37,14 @@ int main() {
 
   for(int i = 1; i < n; i++){
     int opt = -1;
-    for(int j = 0; j < n; j++)
-      if(!pass[j] && (opt == -1 || dist(travel[i-1], j, num) < dist(travel[i-1], opt, num))){
+    for(int j = 0; j < n; j++){
+      if(!pass[j] && (opt == -1 || dist(travel[i-1], j, num) < dist(travel[i-1], opt, num)))
         opt = j;
-      }
+    }
     travel[i] = opt;
     pass[opt] = true;
   }
 
-  for(int i = 0; i < travel.size(); i ++)
-    cout << travel[i] << endl;
+  for(auto i : travel)
+    cout << i << endl;
 }
